@@ -1,0 +1,65 @@
+2026-09-26 23:28:10.123565 (3061092) main____ INFO    ----------------------------------------
+2026-09-26 23:28:10.123630 (3061092) main____ INFO    Jasper version info
+2026-09-26 23:28:10.123637 (3061092) main____ INFO      tool      : Jasper 2023.12
+2026-09-26 23:28:10.123641 (3061092) main____ INFO      version   : 2023.12 FCS 64 bits
+2026-09-26 23:28:10.123649 (3061092) main____ INFO      build date: 2023.12.19 17:39:24 UTC
+2026-09-26 23:28:10.123651 (3061092) main____ INFO    ----------------------------------------
+2026-09-26 23:28:10.123652 (3061092) main____ INFO    Runtime info:
+2026-09-26 23:28:10.123654 (3061092) main____ INFO      platform  : Linux 5.14.0-687.10.1.el9_8.0.1.x86_64 x86_64
+2026-09-26 23:28:10.123661 (3061092) main____ INFO      hostname  : flip1.engr.oregonstate.edu
+2026-09-26 23:28:10.123665 (3061092) main____ INFO      pid       : 3061092
+2026-09-26 23:28:10.123667 (3061092) main____ INFO      arguments : '-style' 'windows' '-allow_unsupported_OS' 'fifo.tcl'
+2026-09-26 23:28:10.123672 (3061092) main____ INFO      locale    : UTF-8
+2026-09-26 23:28:10.123674 (3061092) main____ INFO    ----------------------------------------
+2026-09-26 23:28:10.123675 (3061092) main____ INFO    System resource limits info:
+2026-09-26 23:28:10.123678 (3061092) main____ INFO      virtual memory: unlimited
+2026-09-26 23:28:10.123681 (3061092) main____ INFO      cpu time      : unlimited
+2026-09-26 23:28:10.123688 (3061092) main____ INFO      processes     : 200
+2026-09-26 23:28:10.123695 (3061092) main____ INFO      stack size    : 8388608 B
+2026-09-26 23:28:10.123698 (3061092) main____ INFO      core file size: unlimited
+2026-09-26 23:28:10.123701 (3061092) main____ INFO      open files    : 1024
+2026-09-26 23:28:10.123703 (3061092) main____ INFO      file size     : unlimited
+2026-09-26 23:28:10.123705 (3061092) main____ INFO    ----------------------------------------
+2026-09-26 23:28:10.123707 (3061092) main____ INFO    Memory statistics:
+2026-09-26 23:28:10.123709 (3061092) main____ INFO      total physical memory  : 32599484 kB
+2026-09-26 23:28:10.123712 (3061092) main____ INFO      free physical memory   : 1923852 kB
+2026-09-26 23:28:10.123714 (3061092) main____ INFO      committed address space: 16249264 kB
+2026-09-26 23:28:10.123716 (3061092) main____ INFO    ----------------------------------------
+2026-09-26 23:28:10.124310 (3061092) main____ INFO    Important environment variables:
+2026-09-26 23:28:10.124319 (3061092) main____ INFO      CDS_LIC_FILE       : '/nfs/guille/a1/authcodes/cadence/license.dat'
+2026-09-26 23:28:10.124323 (3061092) main____ INFO      DISPLAY            : 'localhost:10.0'
+2026-09-26 23:28:10.124325 (3061092) main____ INFO      JASPER_INSTALL_DIR : '/usr/local/apps/cadence/jasper_2023.12'
+2026-09-26 23:28:10.124328 (3061092) main____ INFO      JASPER_KERNEL_CHECK: '1'
+2026-09-26 23:28:10.124330 (3061092) main____ INFO      JASPER_OS_CHECK    : '0'
+2026-09-26 23:28:10.124333 (3061092) main____ INFO      LANG               : 'en_US.UTF-8'
+2026-09-26 23:28:10.124334 (3061092) main____ INFO    ----------------------------------------
+2026-09-26 23:28:10.125219 (3061092) lic_core INFO    Initializing license system ...
+2026-09-26 23:28:10.136413 (3061092) lic_core INFO    ... license system initialized.
+2026-09-26 23:28:10.153042 (3061092) lic__man INFO    Claim 'main' for <ui>.
+2026-09-26 23:28:10.153084 (3061092) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2026-09-26 23:28:10.164359 (3061092) lic_core INFO    ... (1) checkout succeeded
+2026-09-26 23:28:10.164407 (3061092) lic__man INFO    Claim 'fpv' for <ui>.
+2026-09-26 23:28:10.164421 (3061092) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2026-09-26 23:28:10.168543 (3061092) lic_core INFO    ... (2) checkout failed (error: -5) ("FLEXnet ERROR(-5, 0, 0): No such feature exists.")
+2026-09-26 23:28:10.168565 (3061092) lic_core INFO    (3) checking out 'jasper_fao' ...
+2026-09-26 23:28:10.176062 (3061092) lic_core INFO    ... (3) checkout succeeded
+2026-09-26 23:28:10.176454 (3061092) main____ INFO    Tool inactivity delay is 480000 ms.
+2026-09-26 23:28:10.522592 (3061092) lic__man INFO    Claim 'fpv' for <ui>.
+2026-09-26 23:28:10.635015 (3061092) lic__man INFO    Unclaim 'fpv' for <ui>.
+2026-09-26 23:28:10.635052 (3061092) lic__man INFO    Claim 'fpv' for <ui>.
+2026-09-26 23:28:10.648873 (3061092) session_ INFO    Starting analysis session with session id 'session_0' (launcher: <local>) ...
+2026-09-26 23:28:10.651010 (3061092) session_ INFO    Analysis session with session id 'session_0' started (pid: 3061111)
+2026-09-26 23:28:13.214243 (3061092) session_ INFO    Analysis session 'session_0' connected to the console (host: 127.0.0.1:56354)
+2026-09-26 23:28:13.593023 (3061092) main____ INFO    Releasing console memory by request of analysis session 'session_0'.
+2026-09-26 23:28:13.593591 (3061092) lic__man INFO    Unclaim everything for 'session_0'.
+2026-09-26 23:28:14.000704 (3061092) lic__man INFO    Unclaim everything for 'session_0'.
+2026-09-26 23:39:01.890405 (3061092) lic__man INFO    Entering idle state.
+2026-09-27 11:03:53.901934 (3061092) lic__man INFO    Leaving idle state.
+2026-09-27 11:03:57.158285 (3061092) lic__man INFO    Claim 'fpv' for 'session_0'.
+2026-09-27 11:03:57.158330 (3061092) lic__man INFO    Claim 'fpv' for 'session_0/prove-0'.
+2026-09-27 11:03:57.840738 (3061092) lic__man INFO    Unclaim everything for 'session_0/prove-0'.
+2026-09-27 11:04:05.535991 (3061092) main____ INFO    About to exit: requested from GUI
+2026-09-27 11:04:05.667361 (3061092) session_ INFO    Analysis session 'session_0' disconnected.
+2026-09-27 11:04:05.671685 (3061092) lic_core INFO    (1) checkin jasper_interactive
+2026-09-27 11:04:05.673337 (3061092) lic_core INFO    (3) checkin jasper_fao
+2026-09-27 11:04:05.674413 (3061092) main____ INFO    Exiting with status 0.

@@ -1,0 +1,626 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2023.12
+# platform  : Linux 5.14.0-687.10.1.el9_8.0.1.x86_64
+# version   : 2023.12 FCS 64 bits
+# build date: 2023.12.19 17:39:24 UTC
+# ----------------------------------------
+# started   : 2026-09-26 23:28:11 PDT
+# hostname  : flip1.engr.oregonstate.edu.(none)
+# pid       : 3061111
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:36443' '-style' 'windows' '-data' 'AAABHnicVY+9CsJAEIS/KPY+h2DEPq2dElQQuxDORIWQE2MQbPRRfZM4e5IiuzCzf3O7FwHJu+s6go1fgilrNuxYCVMOYjiyoKakEZ9puVLJC2U5y4AtDy44PCfVbc6panGtyCYrqVzIG2GsXi5NsOj7Z5KIoVk+Gla2nwHDpBf3IyaYMdf7dqXnSab7bG/LTe65a3OhCzL9cB/+XOq6Up1YHSeV2Q856CYU' '-proj' '/nfs/stak/users/hendetyl/eecs/ece499HW_Verif/quiz2-fifo/jgproject/sessionLogs/session_0' '-init' '-hidden' '/nfs/stak/users/hendetyl/eecs/ece499HW_Verif/quiz2-fifo/jgproject/.tmp/.initCmds.tcl' 'fifo.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2023 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /nfs/stak/users/hendetyl/eecs/ece499HW_Verif/quiz2-fifo/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/nfs/stak/users/hendetyl/.config/cadence/jasper.conf".
+% clear -all
+INFO (IPF121): Cleared environment completely for new design analysis.
+% 
+% analyze -sv fifo_dut.sv
+[-- (VERI-1482)] Analyzing Verilog file '/usr/local/apps/cadence/jasper_2023.12/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file 'fifo_dut.sv'
+% analyze -sv fifo_tb.sv
+[-- (VERI-1482)] Analyzing Verilog file 'fifo_tb.sv'
+[WARN (VERI-1875)] fifo_tb.sv(46): identifier 'counter' is used before its declaration
+% analyze -sv fifo_bind.sv
+[-- (VERI-1482)] Analyzing Verilog file 'fifo_bind.sv'
+% 
+% 
+% elaborate -disable_auto_bbox \
+    -top FIFO
+INFO (ISW003): Top module name is "FIFO".
+[INFO (HIER-8002)] fifo_dut.sv(50): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] fifo_tb.sv(4): compiling module 'FIFO_tb'
+[WARN (VERI-9005)] fifo_tb.sv(46): 3-bit index expression 'counter' is larger than the required 2 bits. This might lead to an out-of-bound access
+[WARN (VERI-1209)] fifo_tb.sv(75): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] fifo_tb.sv(76): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] fifo_tb.sv(95): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] fifo_tb.sv(102): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] fifo_tb.sv(103): expression size 32 truncated to fit in target size 3
+[INFO (VERI-1018)] fifo_dut.sv(4): compiling module 'FIFO'
+[WARN (VERI-1209)] fifo_dut.sv(32): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] fifo_dut.sv(36): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] fifo_dut.sv(42): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] fifo_dut.sv(43): expression size 32 truncated to fit in target size 3
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+FIFO
+[<embedded>] % 
+[<embedded>] % reset rst
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "rst".
+[<embedded>] % 
+[<embedded>] % clock clk 
+[<embedded>] % 
+[<embedded>] % #reset -expression rst
+[<embedded>] % 
+[<embedded>] % set_engine_mode {B M G Hps Hts Tri}
+[<embedded>] % prove -bg -all
+background 0
+INFO (IPF036): Starting proof on task: "<embedded>", 44 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 18 of 54 design flops, 0 of 0 design latches, 68 of 70 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = off (auto)
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = B M G Hps Hts Tri 
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = B M G Hps Hts Tri, total 6
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.RD_REQ" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.RD_ACK" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.WR_REQ" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.WR_ACK" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.NO_OVERFLOW" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.NO_UNDERFLOW" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.a_valid_wr" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.a_valid_wr_complement" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.a_valid_rd" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "FIFO.tb_inst.a_valid_rd_complement" was proven in 0.00 s.
+0: Found proofs for 10 properties in preprocessing
+0: Using multistage preprocessing
+0: Starting reduce
+0: Finished reduce in 0s
+0.0.PRE: Performing Proof Simplification...
+0.0.B: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: Proof Simplification Iteration 1	[0.00 s]
+0.0.B: Proof Simplification Iteration 2	[0.00 s]
+0.0.PRE: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.PRE: The cover property "FIFO.tb_inst.WR_REQ:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "FIFO.tb_inst.WR_ACK:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "FIFO.tb_inst.a_valid_wr:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "FIFO.tb_inst.a_valid_wr_complement:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "FIFO.tb_inst.as_st_stable:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "FIFO.tb_inst.started_valid_write:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "FIFO.tb_inst.a_counter_dec:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "FIFO.tb_inst.start_track_element" was covered in 1 cycles in 0.00 s.
+0.0.B: Proof Simplification Iteration 3	[0.12 s]
+0.0.B: Proof Simplification Iteration 4	[0.12 s]
+0.0.B: Proof Simplification Iteration 5	[0.12 s]
+0.0.PRE: Proof Simplification completed in 0.12 s
+0.0.B: Identified and disabled 17 duplicated targets.
+0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+0: =============================== ProofGrid start ===============================
+0: ProofGrid usable level: 16
+0: Initial ProofGrid level: 1
+0: ProofGrid is starting event handling
+0.0.Hps: flip1.engr.oregonstate.edu: "Rocky Linux 9.8 (Blue Onyx)" is an unsupported operating system.
+0.0.B: flip1.engr.oregonstate.edu: "Rocky Linux 9.8 (Blue Onyx)" is an unsupported operating system.
+0.0.M: flip1.engr.oregonstate.edu: "Rocky Linux 9.8 (Blue Onyx)" is an unsupported operating system.
+0.0.Tri: flip1.engr.oregonstate.edu: "Rocky Linux 9.8 (Blue Onyx)" is an unsupported operating system.
+0.0.G: flip1.engr.oregonstate.edu: "Rocky Linux 9.8 (Blue Onyx)" is an unsupported operating system.
+0.0.Hts: flip1.engr.oregonstate.edu: "Rocky Linux 9.8 (Blue Onyx)" is an unsupported operating system.
+0.0.Hps: Proofgrid shell started at 3187133@flip1.engr.oregonstate.edu(local) jg_3061111_flip1.engr.oregonstate.edu_1
+0.0.B: Proofgrid shell started at 3187130@flip1.engr.oregonstate.edu(local) jg_3061111_flip1.engr.oregonstate.edu_1
+0.0.B: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Tri: Proofgrid shell started at 3187135@flip1.engr.oregonstate.edu(local) jg_3061111_flip1.engr.oregonstate.edu_1
+0.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.B: Starting proof for property "FIFO.tb_inst.RD_REQ:precondition1"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.RD_ACK:precondition1"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.a_valid_rd:precondition1"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.a_valid_rd_complement:precondition1"	[0.00 s].
+0.0.B: A max_length bound was found. The shortest trace is no longer than 131072 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 131072 was found for the property "FIFO.tb_inst.RD_REQ:precondition1" in 0.00 s.
+0.0.B: A max_length bound was found. The shortest trace is no longer than 131072 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 131072 was found for the property "FIFO.tb_inst.RD_ACK:precondition1" in 0.00 s.
+0.0.B: A max_length bound was found. The shortest trace is no longer than 131072 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 131072 was found for the property "FIFO.tb_inst.a_valid_rd:precondition1" in 0.00 s.
+0.0.B: A max_length bound was found. The shortest trace is no longer than 131072 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 131072 was found for the property "FIFO.tb_inst.a_valid_rd_complement:precondition1" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0: Running jobs with 10 threads on "flip1.engr.oregonstate.edu" with 8 cores.
+0: Running jobs with 10 threads on "flip1.engr.oregonstate.edu" with 8 cores.
+0.0.Hps: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.G: Proofgrid shell started at 3187132@flip1.engr.oregonstate.edu(local) jg_3061111_flip1.engr.oregonstate.edu_1
+0.0.Tri: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.RD_REQ:precondition1" was covered in 2 cycles in 0.00 s.
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.FIFO_EMPTY:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "FIFO.tb_inst.RD_REQ:precondition1".
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "FIFO.tb_inst.RD_REQ:precondition1".
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.FIFO_NOT_EMPTY:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "FIFO.tb_inst.RD_REQ:precondition1".
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.FIFO_NOT_FULL:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "FIFO.tb_inst.RD_REQ:precondition1".
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.a_popped:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "FIFO.tb_inst.RD_REQ:precondition1".
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.RD_ACK:precondition1" was covered in 2 cycles in 0.00 s.
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.a_valid_rd:precondition1" was covered in 2 cycles in 0.00 s.
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.a_valid_rd_complement:precondition1" was covered in 2 cycles in 0.00 s.
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.a_empty:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "FIFO.tb_inst.RD_REQ:precondition1".
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.NO_UNDERFLOW:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "FIFO.tb_inst.RD_REQ:precondition1".
+0.0.Hps: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.Hps: Starting proof for property "FIFO.tb_inst.RD_REQ:precondition1"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.RD_ACK:precondition1"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.a_valid_rd:precondition1"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.a_valid_rd_complement:precondition1"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.RD_REQ:precondition1"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.RD_ACK:precondition1"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.a_valid_rd:precondition1"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.a_valid_rd_complement:precondition1"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.FIFO_EMPTY"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.a_empty"	[0.00 s].
+0: Running jobs with 11 threads on "flip1.engr.oregonstate.edu" with 8 cores.
+0: Running jobs with 11 threads on "flip1.engr.oregonstate.edu" with 8 cores.
+0.0.B: Stopped processing property "FIFO.tb_inst.RD_REQ:precondition1"	[0.02 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.RD_ACK:precondition1"	[0.02 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.a_valid_rd:precondition1"	[0.02 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.a_valid_rd_complement:precondition1"	[0.02 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.FIFO_EMPTY"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.a_empty"	[0.00 s].
+0.0.G: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.FIFO_EMPTY" in 0.00 s.
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.a_empty" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.M: Proofgrid shell started at 3187131@flip1.engr.oregonstate.edu(local) jg_3061111_flip1.engr.oregonstate.edu_1
+0.0.B: Trace Attempt  4	[0.00 s]
+0: Running jobs with 12 threads on "flip1.engr.oregonstate.edu" with 8 cores.
+0: Running jobs with 12 threads on "flip1.engr.oregonstate.edu" with 8 cores.
+0.0.G: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.G: Starting proof for property "FIFO.tb_inst.FIFO_EMPTY"	[0.00 s].
+0.0.G: Starting proof for property "FIFO.tb_inst.a_empty"	[0.00 s].
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.G: Partitioning 5 assumptions over 1 inputs...
+0.0.M: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.M: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.M: Starting proof for property "FIFO.tb_inst.FIFO_EMPTY"	[0.00 s].
+0.0.M: Starting proof for property "FIFO.tb_inst.a_empty"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  4	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.M: Validation of fixpoint was successful. Time = 0.00
+0.0.M: Trace Attempt  6	[0.00 s]
+0.0.M: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.M: The property "FIFO.tb_inst.FIFO_EMPTY" was proven in 0.00 s.
+0.0.M: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.M: The property "FIFO.tb_inst.a_empty" was proven in 0.00 s.
+0.0.M: Stopped processing property "FIFO.tb_inst.FIFO_EMPTY"	[0.00 s].
+0.0.M: Stopped processing property "FIFO.tb_inst.a_empty"	[0.00 s].
+0.0.G: Iteration  1	[0.01 s]
+0.0.G: Iteration  1	[0.01 s]
+0.0.Hps: Stopped processing property "FIFO.tb_inst.FIFO_EMPTY"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.a_empty"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.FIFO_NOT_EMPTY"	[0.00 s].
+0.0.M: Starting proof for property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT"	[0.00 s].
+0.0.M: Starting proof for property "FIFO.tb_inst.FIFO_NOT_EMPTY"	[0.00 s].
+0.0.B: Trace Attempt 12	[0.01 s]
+0.0.B: Stopped processing property "FIFO.tb_inst.FIFO_EMPTY"	[0.00 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.a_empty"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.FIFO_NOT_EMPTY"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT" in 0.00 s.
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.FIFO_NOT_EMPTY" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.G: Iteration  2	[0.01 s]
+0.0.G: Iteration  2	[0.01 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.G: Stopped processing property "FIFO.tb_inst.FIFO_EMPTY"	[0.00 s].
+0.0.G: Stopped processing property "FIFO.tb_inst.a_empty"	[0.00 s].
+0.0.G: Starting proof for property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT"	[0.00 s].
+0.0.G: Starting proof for property "FIFO.tb_inst.FIFO_NOT_EMPTY"	[0.00 s].
+0.0.G: Partitioning 5 assumptions over 1 inputs...
+0.0.M: Validation of fixpoint was successful. Time = 0.00
+0.0.M: Trace Attempt  7	[0.00 s]
+0.0.M: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.M: The property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT" was proven in 0.00 s.
+0.0.M: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.M: The property "FIFO.tb_inst.FIFO_NOT_EMPTY" was proven in 0.00 s.
+0.0.M: Stopped processing property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT"	[0.00 s].
+0.0.M: Stopped processing property "FIFO.tb_inst.FIFO_NOT_EMPTY"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.FIFO_NOT_EMPTY"	[0.00 s].
+0.0.B: Trace Attempt  8	[0.00 s]
+0.0.B: Stopped processing property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT"	[0.00 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.FIFO_NOT_EMPTY"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.FIFO_FULL"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.a_full"	[0.00 s].
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.FIFO_FULL" in 0.00 s.
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.a_full" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.M: Starting proof for property "FIFO.tb_inst.FIFO_FULL"	[0.00 s].
+0.0.M: Starting proof for property "FIFO.tb_inst.a_full"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.Hps: Starting proof for property "FIFO.tb_inst.FIFO_FULL"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.a_full"	[0.00 s].
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  4	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.Hts: Proofgrid shell started at 3187134@flip1.engr.oregonstate.edu(local) jg_3061111_flip1.engr.oregonstate.edu_1
+0.0.M: Validation of fixpoint was successful. Time = 0.00
+0.0.G: Iteration  1	[0.00 s]
+0.0.G: Iteration  1	[0.00 s]
+0.0.M: Trace Attempt  6	[0.00 s]
+0.0.M: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.M: The property "FIFO.tb_inst.FIFO_FULL" was proven in 0.00 s.
+0.0.M: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.M: The property "FIFO.tb_inst.a_full" was proven in 0.00 s.
+0.0.M: Stopped processing property "FIFO.tb_inst.FIFO_FULL"	[0.00 s].
+0.0.M: Stopped processing property "FIFO.tb_inst.a_full"	[0.00 s].
+0: Running jobs with 13 threads on "flip1.engr.oregonstate.edu" with 8 cores.
+0: Running jobs with 13 threads on "flip1.engr.oregonstate.edu" with 8 cores.
+0.0.B: Trace Attempt  9	[0.00 s]
+0.0.B: Stopped processing property "FIFO.tb_inst.FIFO_FULL"	[0.00 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.a_full"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.FIFO_FULL:precondition1"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.a_full:precondition1"	[0.00 s].
+0.0.Hts: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.FIFO_FULL:precondition1" in 0.00 s.
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.a_full:precondition1" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.Hts: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.Hts: Starting proof for property "FIFO.tb_inst.FIFO_FULL:precondition1"	[0.00 s].
+0.0.Hts: Starting proof for property "FIFO.tb_inst.a_full:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.Hps: Stopped processing property "FIFO.tb_inst.FIFO_FULL"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.a_full"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.FIFO_FULL:precondition1"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.a_full:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.G: Iteration  2	[0.01 s]
+0.0.G: Iteration  2	[0.01 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.Hts: A trace with 5 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.Hts: The cover property "FIFO.tb_inst.FIFO_FULL:precondition1" was covered in 5 cycles in 0.00 s.
+INFO (IPF047): 0.0.Hts: The cover property "FIFO.tb_inst.a_full:precondition1" was covered in 5 cycles in 0.00 s.
+0.0.Hts: Stopped processing property "FIFO.tb_inst.FIFO_FULL:precondition1"	[0.04 s].
+0.0.Hts: Stopped processing property "FIFO.tb_inst.a_full:precondition1"	[0.04 s].
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.M: Starting proof for property "FIFO.tb_inst.FIFO_FULL:precondition1"	[0.00 s].
+0.0.M: Starting proof for property "FIFO.tb_inst.a_full:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Stopped processing property "FIFO.tb_inst.FIFO_FULL:precondition1"	[0.00 s].
+0.0.M: Stopped processing property "FIFO.tb_inst.a_full:precondition1"	[0.00 s].
+0.0.M: Starting proof for property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.00 s].
+0.0.G: Stopped processing property "FIFO.tb_inst.FIFO_EMPTY_COMPLEMENT"	[0.04 s].
+0.0.G: Stopped processing property "FIFO.tb_inst.FIFO_NOT_EMPTY"	[0.04 s].
+0.0.G: Starting proof for property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.FIFO_FULL:precondition1"	[0.04 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.a_full:precondition1"	[0.04 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.00 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.FIFO_FULL:precondition1"	[0.04 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.a_full:precondition1"	[0.04 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.G: Partitioning 5 assumptions over 1 inputs...
+0.0.Hts: Starting proof for property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.00 s].
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.M: Validation of fixpoint was successful. Time = 0.00
+0.0.M: Trace Attempt  6	[0.00 s]
+0.0.M: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.M: The property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT" was proven in 0.00 s.
+0.0.M: Stopped processing property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.00 s].
+0.0.Hts: Trace Attempt 52	[0.00 s]
+0.0.Hts: Stopped processing property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.00 s].
+0.0.Hts: Starting proof for property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT:precondition1"	[0.00 s].
+0.0.Hts: Starting proof for property "FIFO.tb_inst.NO_OVERFLOW:precondition1"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT:precondition1"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.NO_OVERFLOW:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  8	[0.00 s]
+0.0.B: Stopped processing property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT:precondition1"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.NO_OVERFLOW:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.Hts: A trace with 5 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.Hts: The cover property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT:precondition1" was covered in 5 cycles in 0.00 s.
+INFO (IPF047): 0.0.Hts: The cover property "FIFO.tb_inst.NO_OVERFLOW:precondition1" was covered in 5 cycles in 0.00 s.
+0.0.Hts: Stopped processing property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT:precondition1"	[0.02 s].
+0.0.Hts: Stopped processing property "FIFO.tb_inst.NO_OVERFLOW:precondition1"	[0.02 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.Hps: Stopped processing property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT:precondition1"	[0.02 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.NO_OVERFLOW:precondition1"	[0.02 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.FIFO_NOT_FULL"	[0.00 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT:precondition1"	[0.02 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.NO_OVERFLOW:precondition1"	[0.02 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.FIFO_NOT_FULL"	[0.00 s].
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.FIFO_NOT_FULL" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.M: Starting proof for property "FIFO.tb_inst.FIFO_NOT_FULL"	[0.00 s].
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.Hts: Starting proof for property "FIFO.tb_inst.FIFO_NOT_FULL"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.G: Iteration  1	[0.00 s]
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Validation of fixpoint was successful. Time = 0.00
+0.0.M: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.M: The property "FIFO.tb_inst.FIFO_NOT_FULL" was proven in 0.00 s.
+0.0.Hts: Trace Attempt 22	[0.00 s]
+0.0.Hts: Stopped processing property "FIFO.tb_inst.FIFO_NOT_FULL"	[0.00 s].
+0.0.Hts: Starting proof for property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.M: Stopped processing property "FIFO.tb_inst.FIFO_NOT_FULL"	[0.00 s].
+0.0.G: Iteration  2	[0.01 s]
+0.0.B: Trace Attempt  7	[0.00 s]
+0.0.B: Stopped processing property "FIFO.tb_inst.FIFO_NOT_FULL"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1048576 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1048576 was found for the property "FIFO.tb_inst.a_counter_dec" in 0.00 s.
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.G: Stopped processing property "FIFO.tb_inst.FIFO_FULL_COMPLEMENT"	[0.03 s].
+0.0.G: Starting proof for property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.Hps: Stopped processing property "FIFO.tb_inst.FIFO_NOT_FULL"	[0.00 s].
+0.0.Hps: Starting proof for property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.Hps: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hps: The property "FIFO.tb_inst.a_counter_dec" was proven in 0.00 s.
+0.0.Hps: Stopped processing property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.M: Starting proof for property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.M: Stopped processing property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.M: Starting proof for property "FIFO.tb_inst.a_popped"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.G: Partitioning 5 assumptions over 1 inputs...
+0.0.Hts: Trace Attempt  6	[0.00 s]
+0.0.Hts: Stopped processing property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.Hts: Starting proof for property "FIFO.tb_inst.a_popped"	[0.00 s].
+0.0.B: Stopped processing property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.B: Starting proof for property "FIFO.tb_inst.a_popped"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.Hps: Starting proof for property "FIFO.tb_inst.a_popped"	[0.00 s].
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.M: Trace Attempt  4	[0.00 s]
+0.0.G: Iteration  1	[0.00 s]
+0.0.M: Trace Attempt  5	[0.01 s]
+0.0.G: Iteration  2	[0.01 s]
+0.0.G: Stopped processing property "FIFO.tb_inst.a_counter_dec"	[0.00 s].
+0.0.G: Starting proof for property "FIFO.tb_inst.a_popped"	[0.00 s].
+0.0.G: Partitioning 5 assumptions over 1 inputs...
+0.0.G: Iteration  1	[0.01 s]
+0.0.G: Iteration  2	[0.03 s]
+0.0.Tri: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.Tri: Starting proof for property "FIFO.tb_inst.a_popped"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.G: Iteration  3	[0.05 s]
+0.0.G: Iteration  4	[0.09 s]
+0.0.G: Iteration  5	[0.14 s]
+0.0.G: Iteration  6	[0.14 s]
+0.0.M: Validation of fixpoint was successful. Time = 0.00
+0.0.M: Trace Attempt 15	[0.17 s]
+0.0.M: A proof was found: No trace exists. [0.19 s]
+INFO (IPF057): 0.0.M: The property "FIFO.tb_inst.a_popped" was proven in 0.11 s.
+0.0.M: Stopped processing property "FIFO.tb_inst.a_popped"	[0.11 s].
+0.0.B: Trace Attempt 13	[0.16 s]
+0.0.B: Stopped processing property "FIFO.tb_inst.a_popped"	[0.11 s].
+0.0.B: Last scan. Per property time limit: 0s
+0.0.B: Starting proof for property "FIFO.tb_inst.start_before_done:precondition1"	[0.00 s].
+0.0.B: A max_length bound was found. The shortest trace is no longer than 131072 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 131072 was found for the property "FIFO.tb_inst.start_before_done:precondition1" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Requesting engine job to stop
+0.0.M: Requesting engine job to stop
+0.0.G: Requesting engine job to stop
+0.0.Hps: Requesting engine job to stop
+0.0.Hts: Requesting engine job to stop
+0.0.Tri: Requesting engine job to stop
+INFO (IPF144): 0: Initiating shutdown of proof [0.21 s]
+0.0.B: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.B: The cover property "FIFO.tb_inst.start_before_done:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.B: Stopped processing property "FIFO.tb_inst.start_before_done:precondition1"	[0.02 s].
+0.0.M: Interrupted. [0.19 s]
+0.0.B: Interrupted. [0.00 s]
+0.0.G: Stopped processing property "FIFO.tb_inst.a_popped"	[0.13 s].
+0.0.G: Interrupted. [0.18 s]
+0.0.Hps: Stopped processing property "FIFO.tb_inst.a_popped"	[0.13 s].
+0.0.Hps: Interrupted. [0.19 s]
+0.0.B: Exited with Success (@ 0.22 s)
+0: ProofGrid usable level: 0
+0.0.M: Exited with Success (@ 0.22 s)
+0.0.Hts: Trace Attempt 12	[0.09 s]
+0.0.Hts: Stopped processing property "FIFO.tb_inst.a_popped"	[0.13 s].
+0.0.Hts: Interrupted. [0.19 s]
+0.0.G: Exited with Success (@ 0.22 s)
+0.0.Hps: Exited with Success (@ 0.22 s)
+0.0.Hts: Exited with Success (@ 0.22 s)
+0.0.Tri: Stopped processing property "FIFO.tb_inst.a_popped"	[0.16 s].
+0.0.Tri: Interrupted. [0.20 s]
+0.0.Tri: Exited with Success (@ 0.27 s)
+0: --------------------------------------------------------------
+ProofGrid Summary (utilization 61.38 %)
+--------------------------------------------------------------
+     engines started                               :     6
+     engine jobs started                           :     6
+     jobs where 15 minute load exceeded core count :     6
+
+    Average time in state (seconds)
+    ------------------------------------------------------
+    Engine  Pending     Running        Dead    Utilization
+    ------------------------------------------------------
+      B        0.13        0.21        0.00       61.70 %
+      M        0.13        0.21        0.00       61.35 %
+      G        0.13        0.21        0.00       62.04 %
+    Hps        0.13        0.21        0.00       62.90 %
+    Hts        0.14        0.20        0.00       57.64 %
+    Tri        0.13        0.21        0.00       62.61 %
+    all        0.13        0.21        0.00       61.38 %
+
+    Total time in state (seconds)
+    -----------------------------------------
+            Pending     Running        Dead  
+    -----------------------------------------
+               0.79        1.26        0.00
+
+    Data read    : 26.81 kiB
+    Data written : 10.30 kiB
+
+0: All pending notifications were processed.
+INFO (IPF059): 0: Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 44
+                 assertions                   : 20
+                  - proven                    : 20 (100%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 0 (0%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 24
+                  - unreachable               : 0 (0%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 24 (100%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.377 GB.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.
